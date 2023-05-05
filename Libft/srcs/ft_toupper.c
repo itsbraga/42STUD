@@ -6,17 +6,22 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 14:48:52 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/03 17:00:16 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/04 22:07:05 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
-	{
 		c -= 32;
-		return (1);
-	}
-	else
-		return (0);
+	return (c);
 }
+
+/*int main(void)
+{
+    int c = 106;
+    printf("%d\n", ft_toupper(c));
+    return (0);
+}*/

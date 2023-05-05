@@ -3,46 +3,56 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annabrag <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 12:28:00 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/04 12:38:07 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/05 13:50:23 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-
+	if (n == 0)
+		return (0);
+	while ((i < n - 1) && ((char *)s1)[i] == ((char *)s2)[i])
+		i++;
+	return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
 }
 
-#include <stdio.h>
-
-int		main(void)
+/*int	main(void)
 {
-	const char	s1[]="Hello people";
-	const char	s2[]="Hello world";
-	const char	s3[]="Hello world";
-	const char	s4[]="Hello worldd";
-	const char	s5[]="Salut a tous";
-	const char	s6[]="Salut";
-	const char	s7[]="";
-	const char	s8[]="N";
-	const char	s9[]="Je suis fort";
-	const char	s10[]="Je suis fort";
+	char	s1[]="Hello people";
+	char	s2[]="Hello world";
 
-	printf("%d\n", ft_strncmp(s1, s2, 7));
-	printf("%d\n", strncmp(s1, s2, 7));
-	printf("%d\n", ft_strncmp(s3, s4, 12));
-	printf("%d\n", strncmp(s3, s4, 12));
-	printf("%d\n", ft_strncmp(s5, s6, 12));
-	printf("%d\n", strncmp(s5, s6, 12));
-	printf("%d\n", ft_strncmp(s7, s8, 2));
-	printf("%d\n", strncmp(s7, s8, 2));
-	printf("%d\n", ft_strncmp(s9, s10, 25));
-	printf("%d\n", strncmp(s9, s10, 25));
-}
+	char	s1a[]="Hello world";
+	char	s2a[]="Hello worldd";
+
+	char	s1b[]="Salut a tous";
+	char	s2b[]="Salut";
+
+	char	s1c[]="M";
+	char	s2c[]="";
+
+	char	s1d[]="Il fait beau";
+	char	s2d[]="Il fait beau";
+
+	printf("My function: %d\n", ft_memcmp(s1, s2, 7));
+	printf("True: %d\n", memcmp(s1, s2, 7));
+
+	printf("My function: %d\n", ft_memcmp(s1a, s2a, 12));
+	printf("True: %d\n", memcmp(s1a, s2a, 12));
+
+	printf("My function: %d\n", ft_memcmp(s1b, s2b, 12));
+	printf("True: %d\n", memcmp(s1b, s2b, 12));
+
+	printf("My function: %d\n", ft_memcmp(s1c, s2c, 2));
+	printf("True: %d\n", memcmp(s1c, s2c, 2));
+
+	printf("My function: %d\n", ft_memcmp(s1d, s2d, 10));
+	printf("True: %d\n", memcmp(s1d, s2d, 10));
+}*/

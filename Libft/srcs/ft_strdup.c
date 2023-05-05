@@ -6,21 +6,11 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 15:00:35 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/03 19:55:12 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/05 17:36:54 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
-
-int	ft_strlen(const char *str)
-{
-	int		i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strdup(const char *str)
 {
@@ -44,9 +34,7 @@ char	*ft_strdup(const char *str)
 	return (dup);
 }
 
-/*#include <stdio.h>
-
-int		main(int argc, char **argv)
+/*int	main(int argc, char **argv)
 {
 	if (argc < 2)
 		return (0);

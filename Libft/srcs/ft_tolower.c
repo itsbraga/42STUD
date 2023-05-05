@@ -6,17 +6,22 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 14:54:06 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/03 17:00:28 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/04 22:07:21 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)
-	{
 		c += 32;
-		return (1);
-	}
-	else
-		return (0);
+	return (c);
 }
+
+/*int	main(void)
+{
+	int	c = 80;
+	printf("%d\n", ft_tolower(c));
+	return (0);
+}*/

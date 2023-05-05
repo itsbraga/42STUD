@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annabrag <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 11:30:57 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/04 12:27:29 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/04 22:50:28 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
@@ -21,22 +21,23 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		((char *)dest)[i] = ((char *)src)[i];
+		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
 		i++;
 	}
-	((char *)dest)[i] = '\0';
-	return ((char *)dest);
+	return ((unsigned char *)dest);
 }
 
-/*#include <stdio.h>
-
-int		main(void)
+/*int		main(void)
 {
-	char	dest[100];
-	char	src[] = "Le 4 mai est le 124e jour de l'annee";
-	char	*ret1 = ft_memcpy(dest, src, 24);
-	char	*ret2 = memcpy(dest, src, 24);
+	void	*dest = NULL;
+	unsigned char	src[] = "Le 4 mai est le 124e jour de l'annee";
+//	unsigned char	*ret1 = ft_memcpy(dest, src, 10);
+//	unsigned char	*ret2 = memcpy(dest, src, 24);
 
-	printf("My function: %s\n", ret1);
-	printf("True function: %s\n", ret2);
+	dest = malloc(sizeof(*dest) * 30);
+	if (!dest)
+		return (0);
+	dest = memset(dest, 'j', 30);
+	printf("My function: %s\n", (char *)ft_memcpy(dest, src, 10));
+//	printf("True: %s\n", ret2);
 }*/

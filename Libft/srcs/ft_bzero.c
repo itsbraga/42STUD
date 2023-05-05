@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annabrag <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 19:23:31 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/03 20:24:27 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/05 13:49:55 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -26,9 +26,7 @@ void	ft_bzero(void *s, size_t n)
 	}
 }
 
-#include <stdio.h>
-
-int		main(void)
+/*int	main(void)
 {
 	char	s[50];
 
@@ -45,4 +43,4 @@ int		main(void)
 	puts("Computer's function:");
 	bzero(s, 2);
 	puts(s);
-}
+}*/

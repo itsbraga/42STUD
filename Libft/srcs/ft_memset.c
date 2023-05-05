@@ -6,11 +6,11 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 19:10:10 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/03 20:15:32 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/05 13:50:36 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
@@ -19,17 +19,15 @@ void	*ft_memset(void *s, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		*(char *)(s + i) = c;
+		*(unsigned char *)(s + i) = c;
 		i++;
 	}
 	return (s);
 }
 
-/*#include <stdio.h>
-
-int		main(void)
+/*int	main(void)
 {
-	char	s[50];
+	unsigned char	s[50];
 
 	puts("Target:");
 	strcpy(s, "You're using a function of string.h");

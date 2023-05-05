@@ -3,14 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annabrag <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 20:25:13 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/03 20:41:43 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/05 18:02:44 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
+
+int	get_len(char const *s1, char const *s2)
+{
+	int	len_t;
+
+	len_t = 0;
+	while (*s1)
+		len_t++;
+	while (*s2)
+		len_t++;
+}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -38,11 +49,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (s1);
 }
 
-#include <stdio.h>
-
-int	main(void)
+/*int	main(void)
 {
 	char s1[] = "Il est 20:37,";
 	char s2[] = "et je ne suis toujours pas rentree";
 	printf("%s\n", ft_strjoin(s1, s2));
-}
+}*/

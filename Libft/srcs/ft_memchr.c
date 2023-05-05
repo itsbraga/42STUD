@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 15:25:54 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/05 17:30:53 by annabrag         ###   ########.fr       */
+/*   Created: 2023/05/04 16:36:41 by annabrag          #+#    #+#             */
+/*   Updated: 2023/05/05 23:17:56 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int	i;
-	int	len;
+	size_t	i;
 
-	len = 0;
-	i = -1;
-	while (s[++i])
-		len++;
+	if (!s)
+		return (NULL);
 	i = 0;
-	while (i <= len)
+	while (i < n)
 	{
-		if ((char)c == s[i])
+		if (c == ((char *)s)[i])
 			return ((char *)s + i);
 		i++;
 	}
@@ -33,9 +30,15 @@ char	*ft_strchr(const char *s, int c)
 
 /*int	main(void)
 {
-	char	s[]="I like p,inea,pples.";
-	char	c = '\0';
-	
-	printf("searchedChar: |%c|\nMy function: %s\n", c, ft_strchr(s, c));
-	printf("searchedChar: |%c|\nTrue: %s\n", c, strchr(s, c));
+	const char	s[]="Roses are red, violets are blue.";
+	const char	c = 'i';
+	char		*ret1;
+	char		*ret2;
+
+	ret1 = ft_memchr(s, c, 32);
+	ret2 = memchr(s, c, 32);
+
+	puts("memBlock: Roses are red, violets are blue.\n");
+	printf("searchedChar: |%c|\nMy function: %s\n", c, ret1);
+	printf("searchedChar: |%c|\nTrue: %s\n", c, ret2);
 }*/

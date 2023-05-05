@@ -6,13 +6,11 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:56:57 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/03 19:53:58 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/04 19:38:39 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
-
-int		ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
 	if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))
 		return (1);

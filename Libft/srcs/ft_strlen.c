@@ -6,13 +6,15 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 12:03:23 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/03 17:08:51 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/05 18:28:31 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
-	int		i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])

@@ -6,15 +6,13 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 12:13:41 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/03 19:54:26 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/04 22:48:58 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
-
-int		ft_isprint(int c)
+int	ft_isprint(int c)
 {
-	if (c <= 32 || c > 255)
+	if (c < 32 || c > 126)
 		return (0);
 	else
 		return (1);

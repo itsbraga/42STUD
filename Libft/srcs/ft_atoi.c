@@ -6,11 +6,11 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 12:08:06 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/03 19:53:44 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/05 13:49:45 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
@@ -37,9 +37,7 @@ int	ft_atoi(const char *str)
 	return (res * sign);
 }
 
-/*#include <stdio.h>
-
-int		main(int argc, char **argv)
+/*int	main(int argc, char **argv)
 {
 	if (argc < 2)
 		return (0);
