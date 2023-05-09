@@ -6,7 +6,7 @@
 /*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 10:41:16 by panther           #+#    #+#             */
-/*   Updated: 2023/05/09 10:51:56 by panther          ###   ########.fr       */
+/*   Updated: 2023/05/09 18:13:07 by panther          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 void    ft_lstdelone(t_list *lst, void (*del)(void*))
 {
     if (!del)
-        return ;
+        return;
     if (lst)
     {
         del(lst->content);
         free(lst);
     }
 }
+
+/*int   main(void)*/

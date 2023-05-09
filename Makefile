@@ -6,7 +6,7 @@
 #    By: panther <panther@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 11:07:10 by annabrag          #+#    #+#              #
-#    Updated: 2023/05/09 10:21:09 by panther          ###   ########.fr        #
+#    Updated: 2023/05/09 18:27:12 by panther          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ SRCS = ft_isalpha.c \
 	   ft_strnstr.c \
 	   ft_atoi.c \
 	   ft_calloc.c \
-	   ft_strdup.c
+	   ft_strdup.c \
 
 BONUS = ft_lstmap.c \
 		ft_lstiter.c \
@@ -41,6 +41,7 @@ BONUS = ft_lstmap.c \
 		ft_lstadd_back.c \
 		ft_lstlast.c \
 		ft_lstsize.c \
+		ft_lstnew.c 
 
 OBJECTS = $(SRCS:.c=.o)
 
@@ -66,8 +67,8 @@ $(NAME): $(OBJECTS)
 				 $(LIBR) $(NAME)
 
 bonus: $(BONUS_OBJS)
-			$(LIBC) $(BONUS) $(BONUS_OBJS)
-			$(LIBR) $(BONUS)
+			$(LIBC) $(NAME) $(BONUS_OBJS)
+			$(LIBR) $(NAME)
 
 all: $(NAME)
 
