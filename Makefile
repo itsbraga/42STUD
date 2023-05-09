@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: annabrag <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: panther <panther@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 11:07:10 by annabrag          #+#    #+#              #
-#    Updated: 2023/05/05 15:58:37 by annabrag         ###   ########.fr        #
+#    Updated: 2023/05/09 10:21:09 by panther          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,18 @@ SRCS = ft_isalpha.c \
 	   ft_calloc.c \
 	   ft_strdup.c
 
+BONUS = ft_lstmap.c \
+		ft_lstiter.c \
+		ft_lstclear.c \
+		ft_lstdelone.c \
+		ft_lstadd_front.c \
+		ft_lstadd_back.c \
+		ft_lstlast.c \
+		ft_lstsize.c \
+
 OBJECTS = $(SRCS:.c=.o)
+
+BONUS_OBJS = $(BONUS:.c=.o)
 
 NAME = libft.a
 
@@ -53,6 +64,10 @@ LIBR = ranlib
 $(NAME): $(OBJECTS)
 		 $(LIBC) $(NAME) $(OBJECTS)
 				 $(LIBR) $(NAME)
+
+bonus: $(BONUS_OBJS)
+			$(LIBC) $(BONUS) $(BONUS_OBJS)
+			$(LIBR) $(BONUS)
 
 all: $(NAME)
 
