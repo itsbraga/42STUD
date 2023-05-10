@@ -3,32 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: panther <anbraga@student.42.fr>            +#+  +:+       +#+        */
+/*   By: annabrag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/06 18:14:59 by panther           #+#    #+#             */
-/*   Updated: 2023/05/06 19:41:08 by panther          ###   ########.fr       */
+/*   Created: 2023/05/08 12:07:33 by annabrag          #+#    #+#             */
+/*   Updated: 2023/05/08 18:56:09 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-    char    *s_copy;
-    size_t  i;
+	char	*s_copy;
+	size_t	i;
 
-    if (!s || !f)
-        return (NULL);
-    if (!(s_copy = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
-        return (NULL);
-    i = 0;
-    while (i < ft_strlen(s))
-    {
-        s_copy[i] = f(i, s[i]);
-        i++;
-    }
-    s_copy[i] = '\0';
-    return (s_copy);
+	if (!s || !f)
+		return (NULL);
+	s_copy = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!s_copy)
+		return (NULL);
+	i = 0;
+	while (i < ft_strlen(s))
+	{
+		s_copy[i] = f(i, s[i]);
+		i++;
+	}
+	s_copy[i] = '\0';
+	return (s_copy);
 }
 
 /*char    f(unsigned int i, char c)

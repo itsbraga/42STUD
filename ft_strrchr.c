@@ -6,7 +6,7 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 16:04:44 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/05 17:34:41 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/10 17:02:17 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strrchr(const char *s, int c)
 		return (NULL);
 	while (last >= 0)
 	{
-		if (c == s[last])
+		if ((char)c == s[last])
 			return ((char *)s + last);
 		last--;
 	}

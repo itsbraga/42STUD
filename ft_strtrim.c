@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 12:38:37 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/10 16:43:31 by annabrag         ###   ########.fr       */
+/*   Created: 2023/05/08 12:10:19 by annabrag          #+#    #+#             */
+/*   Updated: 2023/05/10 15:23:43 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	t_list	*new;
+	char	*trim;
+	size_t	start;
+	size_t	end;
 
-	new = malloc(sizeof(t_list));
-	if (!new)
+	if (!s1 || !set)
 		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	start = 0;
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	end = ft_strlen(s1);
+	while (end > start && ft_strchr(set, s1[end - 1]))
+		end--;
+	trim = ft_substr(s1, start, (start - end));
+	return (trim);
 }
 
-/*int	main(void)
+/*int	main(int argc, char **argv)
 {
-	t_list	*res;
-	int	content = 20;
-
-	res = ft_lstnew(content);
-	printf("New contains: %d\n", res);
+	if (argc < 2)
+		return (0);
+	printf("Result: %s\n", ft_strtrim(argv[1], argv[2]));
 }*/

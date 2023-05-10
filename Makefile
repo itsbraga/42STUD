@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: panther <panther@student.42.fr>            +#+  +:+       +#+         #
+#    By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 11:07:10 by annabrag          #+#    #+#              #
-#    Updated: 2023/05/09 18:27:12 by panther          ###   ########.fr        #
+#    Updated: 2023/05/10 16:42:29 by annabrag         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,21 +27,33 @@ SRCS = ft_isalpha.c \
 	   ft_strchr.c \
 	   ft_strrchr.c \
 	   ft_strncmp.c \
+	   ft_memchr.c \
 	   ft_memcmp.c \
 	   ft_strnstr.c \
 	   ft_atoi.c \
 	   ft_calloc.c \
 	   ft_strdup.c \
+	   ft_substr.c \
+	   ft_strjoin.c \
+	   ft_strtrim.c \
+	   ft_split.c \
+	   ft_itoa.c \
+	   ft_strmapi.c \
+	   ft_striteri.c \
+	   ft_putchar_fd.c \
+	   ft_putstr_fd.c \
+	   ft_putendl_fd.c \
+	   ft_putnbr_fd.c
 
-BONUS = ft_lstmap.c \
-		ft_lstiter.c \
-		ft_lstclear.c \
-		ft_lstdelone.c \
+BONUS = ft_lstnew.c \
 		ft_lstadd_front.c \
-		ft_lstadd_back.c \
-		ft_lstlast.c \
 		ft_lstsize.c \
-		ft_lstnew.c 
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c
 
 OBJECTS = $(SRCS:.c=.o)
 
@@ -51,33 +63,27 @@ NAME = libft.a
 
 INCS = libft.h
 
-CC = cc
-
 CFLAGS = -Wall -Wextra -Werror
 
 LIBC = ar -rcs
 
-LIBR = ranlib
-
 .c.o:
-		$(CC) $(CFLAGS) -I $(INCS) -c $< -o $@
+		cc $(CFLAGS) -I $(INCS) -c $< -o $@
 		
 $(NAME): $(OBJECTS)
 		 $(LIBC) $(NAME) $(OBJECTS)
-				 $(LIBR) $(NAME)
-
-bonus: $(BONUS_OBJS)
-			$(LIBC) $(NAME) $(BONUS_OBJS)
-			$(LIBR) $(NAME)
 
 all: $(NAME)
 
+bonus: $(BONUS_OBJS)
+		$(LIBC) $(NAME) $(BONUS_OBJS)
+
 clean:
-		rm -f $(OBJECTS)
+		rm -f $(OBJECTS) $(BONUS_OBJS)
 
 fclean: clean
 		rm -f $(NAME)
 
-re: fclean all
+re: fclean all bonus
 
 .PHONY: all clean fclean re

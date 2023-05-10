@@ -3,21 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: panther <anbraga@student.42.fr>            +#+  +:+       +#+        */
+/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/07 23:35:22 by panther           #+#    #+#             */
-/*   Updated: 2023/05/07 23:36:23 by panther          ###   ########.fr       */
+/*   Created: 2023/05/08 12:07:07 by annabrag          #+#    #+#             */
+/*   Updated: 2023/05/08 18:54:13 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void    ft_striteri(char *s, void (*f)(unsigned int, char *))
-{
-    unsigned int    i;
+#include "libft.h"
 
-    i = 0;
-    while (s[i])
-    {
-        f(i, &s[i]);
-        i++;
-    }
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+{
+	unsigned int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 15:00:35 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/05 17:36:54 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/10 17:48:45 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 char	*ft_strdup(const char *str)
 {
-	int		i;
-	int		slen;
+	size_t	i;
+	size_t	slen;
 	char	*dup;
 
-	slen = ft_strlen(str);
-	dup = malloc(sizeof(const char *) * (slen + 1));
-	if (!dup)
-		return (NULL);
 	if (!str)
+		return (NULL);
+	slen = ft_strlen(str);
+	dup = (char *)malloc(sizeof(char) * (slen + 1));
+	if (!dup)
 		return (NULL);
 	i = 0;
 	while (str[i])

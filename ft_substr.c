@@ -3,34 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: panther <anbraga@student.42.fr>            +#+  +:+       +#+        */
+/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/06 12:23:18 by panther           #+#    #+#             */
-/*   Updated: 2023/05/06 16:39:38 by panther          ###   ########.fr       */
+/*   Created: 2023/05/08 12:08:22 by annabrag          #+#    #+#             */
+/*   Updated: 2023/05/10 17:58:26 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-    char    *ext;
+	char	*sub;
 
-    if (!s)
-        return (NULL);
-    ext = (char *)malloc(sizeof(char *) * (len + 1));
-    if (!ext)
-        return (NULL);
-    if ((size_t)start >= ft_strlen(s))
-        start = ft_strlen(s);
-    if (len > ft_strlen(s) - start)
-    {
-        len = ft_strlen(s) - start;
-        ext = (char *)malloc(len + 1);
-    }
-    ft_memcpy(ext, s + start, len);
-    ext[len] = 0;
-    return (ext);
+	if (!s)
+		return (NULL);
+	if ((size_t)start > ft_strlen(s))
+		start = ft_strlen(s);
+	if (len > (ft_strlen(s) - start))
+		len = ft_strlen(s) - start;
+	sub = (char *)malloc(sizeof(char) * (len + 1));
+	if (!sub)
+		return (NULL);
+	ft_memcpy(sub, s + start, len);
+	sub[len] = 0;
+	return (sub);
 }
 
 /*int main(int argc, char **argv)
@@ -42,6 +39,7 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
     {
         ret_atoi1 = atoi(argv[2]);
         ret_atoi2 = atoi(argv[3]);
-        printf("L'extraction obtenue est: %s\n", ft_substr(argv[1], ret_atoi1, ret_atoi2));
+        printf("L'extraction obtenue est: %s\n", ft_substr(argv[1],
+				ret_atoi1, ret_atoi2));
     }
 }*/
