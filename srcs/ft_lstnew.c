@@ -6,11 +6,11 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 12:38:37 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/10 16:43:31 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/12 13:24:15 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libc/libft.h"
 
 t_list	*ft_lstnew(void *content)
 {

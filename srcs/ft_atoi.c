@@ -6,11 +6,28 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 12:08:06 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/05 13:49:45 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/12 17:53:43 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libc/libft.h"
+
+/*	Description:
+	Cette fonction permet de transformer une chaîne de caractères,
+	représentant une valeur entière, en une valeur numérique de type
+	int -> ASCII to integer.
+	
+	Warning!
+	La fonction atoi retourne la valeur 0 si la chaîne de caractères
+	ne contient pas une représentation de valeur numérique. Il n'est
+	donc pas possible de distinguer la chaîne "0" d'une chaîne ne
+	contenant pas un nombre entier.
+
+	Valeur de retour:
+	- 0 si la chaîne à convertir ne contient pas une donnée numérique
+	  entière (int)
+	- Une valeur de type int équivalente à la chaîne passée en paramètre.
+*/
 
 int	ft_atoi(const char *str)
 {

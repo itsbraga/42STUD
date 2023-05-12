@@ -6,9 +6,22 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:56:57 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/04 19:38:39 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/12 17:52:59 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/libc/libft.h"
+
+/*	Description:
+	Cette fonction permet de tester si un caractère est alpha-numérique ou non
+	
+	Warning!
+	On ne traite que les caractères purs ASCII (donc jusqu'à 127).
+
+	Valeur de retour:
+	- Une valeur positive non nulle si c'est un caractère alpha-numérique
+	- 0 si c'est un caractère alpha-numérique
+*/
 
 int	ft_isalnum(int c)
 {

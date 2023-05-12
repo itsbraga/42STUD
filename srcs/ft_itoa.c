@@ -6,11 +6,21 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 12:08:39 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/08 18:52:51 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/12 18:03:27 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libc/libft.h"
+
+/*	Description:
+	Cette fonction convertit le nombre entier 'n' en une chaîne de caractères
+	contenant ce même nombre.
+
+	Valeur de retour:
+	- La chaîne de caractères contenant 'n'
+	- NULL si l'argument 'n' est invalide et définira errno sur une erreur de
+	  type EINVAL
+*/
 
 static int	len_digit(long n)
 {

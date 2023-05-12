@@ -6,11 +6,11 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 14:33:56 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/05 17:35:03 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/12 13:25:13 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libc/libft.h"
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {

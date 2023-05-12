@@ -6,11 +6,20 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 13:39:24 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/10 15:10:58 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/12 18:28:16 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libc/libft.h"
+
+/*	Description:
+	Cette fonction ajoute un nouvel élément au début d'une liste chaînée en
+	mettant à jour les pointeurs appropriés pour maintenir la cohérence de
+	la liste.
+
+	Valeur de retour:
+	Aucune.
+*/
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
@@ -19,4 +28,29 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	*lst = new;
 }
 
-/*int	main(void)*/
+/*void	print_list(t_list *head)
+{
+	t_list	*curr = head;
+
+	while (curr != NULL)
+	{
+		printf("%s\n", (char *)curr->content);
+		curr = curr->next;
+	}
+}
+
+int	main(void)
+{
+	t_list	*head = NULL;
+	t_list	*elem1 = ft_lstnew("Premier élément");
+	t_list	*elem2 = ft_lstnew("Deuxième élément");
+	t_list	*elem3 = ft_lstnew("Troisième élément");
+
+	ft_lstadd_front(&head, element3);
+	ft_lstadd_front(&head, element2);
+	ft_lstadd_front(&head, element1);
+
+	print_list(head);
+
+	return (0);
+}*/

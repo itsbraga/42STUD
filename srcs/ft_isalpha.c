@@ -6,9 +6,20 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:40:10 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/04 19:38:21 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/12 17:51:36 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/libc/libft.h"
+
+/*	Description:
+	Cette fonction permet de tester si un caractère est alphabétique ou non
+	(majuscules et minuscules).
+	
+	Valeur de retour:
+	- Valeur positive non nulle si c'est un caractère alphabétique
+	- 0 si ce n'est pas un caractère alphabétique
+*/
 
 int	ft_isalpha(int c)
 {

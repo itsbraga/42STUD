@@ -6,11 +6,11 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 16:04:44 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/10 17:02:17 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/12 13:25:35 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libc/libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

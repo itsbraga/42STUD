@@ -6,11 +6,11 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 15:29:00 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/11 15:50:58 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/12 17:39:29 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libc/libft.h"
 
 static int	word_len(char const *s, char c)
 {
@@ -43,15 +43,15 @@ static int	word_count(char const *s, char c)
 	return (counter);
 }
 
-static void	*free_f(char **split)
+static void	*free_f(char **split, size_t i)
 {
-	size_t	i;
+	size_t	j;
 
-	i = 0;
-	while (i < ft_strlen(*split))
+	j = 0;
+	while (j < i)
 	{
-		free(split[i]);
-		i++;
+		free(split[j]);
+		j++;
 	}
 	free(split);
 	return (NULL);
@@ -98,25 +98,31 @@ char	**ft_split(char const *s, char c)
 		{
 			split[i] = ft_strdup2(s, c);
 			if (!split[i++])
-				return (free_f(split));
+				return (free_f(split, i));
 			s += word_len(s, c);
 		}
 		else
 			s++;
 	}
-	split[i] = NULL;
+	split[i] = '\0';
 	return (split);
 }
 
 /*int	main(int argc, char **argv)
 {
 	int		i;
-	char	**split = ft_split(argv[1], *argv[2]);
+	char	**split = NULL;
 
 	i = 0;
 	if (argc < 3)
 		return (0);
+	split = ft_split(argv[1], *argv[2]);
+	if (!split)
+		return (0);
 	while (i < word_count(argv[1], argv[2][0]))
+	{
 		printf("%s\n", split[i++]);
-	return (0);
+		free(split[i++]);
+	}
+	free(split);
 }*/

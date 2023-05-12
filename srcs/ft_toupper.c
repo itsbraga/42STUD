@@ -6,11 +6,11 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 14:48:52 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/04 22:07:05 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/12 13:25:50 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libc/libft.h"
 
 int	ft_toupper(int c)
 {

@@ -6,9 +6,13 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 12:01:05 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/04 22:53:52 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/12 17:52:43 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/libc/libft.h"
+
+/* cf. Warning dans ft_isalnum */
 
 int	ft_isascii(int c)
 {

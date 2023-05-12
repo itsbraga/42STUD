@@ -6,11 +6,11 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 20:25:13 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/11 15:11:26 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/12 13:25:06 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libc/libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

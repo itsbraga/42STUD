@@ -6,11 +6,22 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 19:10:10 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/05 13:50:36 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/12 13:32:45 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libc/libft.h"
+
+/*	Description :
+	Cette fonction permet de remplir une zone mémoire,
+	identifiée par son adresse et sa taille, avec une
+	valeur précise.
+
+	Valeur de retour :
+	Après exécution de la fonction, l'adresse de la
+	mémoire ré-initialisée vous sera retournée
+	(autrement dit la valeur du paramètre *s).
+*/
 
 void	*ft_memset(void *s, int c, size_t n)
 {

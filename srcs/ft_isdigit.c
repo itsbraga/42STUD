@@ -6,9 +6,11 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:55:04 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/04 19:38:58 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/12 13:23:34 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/libc/libft.h"
 
 int	ft_isdigit(int c)
 {

@@ -6,11 +6,11 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 12:06:02 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/11 14:34:38 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/12 13:24:46 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libc/libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {

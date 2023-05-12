@@ -6,11 +6,11 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 11:52:27 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/11 15:05:51 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/12 13:24:49 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libc/libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

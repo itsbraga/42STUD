@@ -6,11 +6,11 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 11:30:57 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/04 22:50:28 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/12 13:24:31 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libc/libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
