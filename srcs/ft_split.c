@@ -6,7 +6,7 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 15:29:00 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/10 18:34:36 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/11 15:50:58 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	word_len(char const *s, char c)
 	int		len;
 
 	len = 0;
-	while (*s != c)
+	while (*s && *s != c)
 	{
 		len++;
 		s++;
@@ -43,6 +43,20 @@ static int	word_count(char const *s, char c)
 	return (counter);
 }
 
+static void	*free_f(char **split)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < ft_strlen(*split))
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
+	return (NULL);
+}
+
 static char	*ft_strdup2(char const *s, char c)
 {
 	char	*dup;
@@ -65,20 +79,6 @@ static char	*ft_strdup2(char const *s, char c)
 	return (dup);
 }
 
-static void	*free_s(char **split)
-{
-	size_t	i;
-	
-	i = 0;
-	while (i < ft_strlen(*split))
-	{
-		free(split[i]);
-		i++;
-	}
-	free(split);
-	return (NULL);
-}
-
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
@@ -98,7 +98,7 @@ char	**ft_split(char const *s, char c)
 		{
 			split[i] = ft_strdup2(s, c);
 			if (!split[i++])
-				return (free_s((char **)split));
+				return (free_f(split));
 			s += word_len(s, c);
 		}
 		else
@@ -112,15 +112,11 @@ char	**ft_split(char const *s, char c)
 {
 	int		i;
 	char	**split = ft_split(argv[1], *argv[2]);
-	
+
 	i = 0;
 	if (argc < 3)
 		return (0);
 	while (i < word_count(argv[1], argv[2][0]))
-	{
-		printf("%s\n", split[i]);
-		free(split[i]);
-		i++;
-	}
-	free(split);
+		printf("%s\n", split[i++]);
+	return (0);
 }*/

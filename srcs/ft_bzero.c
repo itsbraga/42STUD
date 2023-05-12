@@ -1,26 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 16:27:04 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/10 16:55:32 by annabrag         ###   ########.fr       */
+/*   Created: 2023/05/03 19:23:31 by annabrag          #+#    #+#             */
+/*   Updated: 2023/05/11 15:24:41 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	ft_bzero(void *s, size_t n)
 {
-	void	*ret;
+	size_t	i;
 
-	if (size == 0 || nmemb > (sizeof(char) * 2147483424) / size)
-		return (NULL);
-	ret = (void *)malloc(nmemb * size);
-	if (!ret)
-		return (NULL);
-	ft_bzero(ret, (nmemb * size));
-	return (ret);
+	i = 0;
+	if (!s && !n)
+		return ;
+	while (i < n)
+	{
+		*(char *)(s + i) = 0;
+		i++;
+	}
 }
+
+/*int	main(void)
+{
+	char	s[50];
+
+	puts("Target:");
+	strcpy(s, "J'adore les sushis.");
+	puts(s);
+	puts("\n");
+
+	puts("My function:");
+	ft_bzero(s, 2);
+	puts(s);
+	puts("\n");
+
+	puts("Computer's function:");
+	bzero(s, 2);
+	puts(s);
+}*/

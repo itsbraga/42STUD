@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 14:21:50 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/05 18:47:11 by annabrag         ###   ########.fr       */
+/*   Created: 2023/05/03 11:55:28 by annabrag          #+#    #+#             */
+/*   Updated: 2023/05/11 15:06:05 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	i;
-	size_t	dlen;
-	size_t	slen;
+	int		i;
 
 	i = 0;
-	dlen = ft_strlen(dst);
-	slen = ft_strlen(src);
-	if (size == 0 || size <= dlen)
-		return (slen + size);
-	if (!dst && !src)
-		return (0);
-	while (src[i] && i < (size - dlen - 1))
+	if (!s)
+		return ;
+	while (s[i])
 	{
-		dst[dlen + i] = src[i];
+		write(fd, &s[i], 1);
 		i++;
 	}
-	dst[dlen + i] = '\0';
-	return (dlen + slen);
+	write(fd, "\n", 1);
 }
 
-/*int	main(void)
+/*int		main(void)
 {
-	char	dst[11] = "aaaaaaaa";
-
-	printf("R: %zu\n", ft_strlcat(dst, "lorem", 15));
+	ft_putendl_fd("J'ai faim!", 1);
 }*/

@@ -6,7 +6,7 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 15:25:54 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/05 17:30:53 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/11 15:20:31 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ char	*ft_strchr(const char *s, int c)
 	int	len;
 
 	len = 0;
-	i = -1;
-	while (s[++i])
+	i = 0;
+	while (s[i++])
 		len++;
 	i = 0;
 	while (i <= len)

@@ -6,7 +6,7 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 16:36:41 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/10 17:00:48 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/05/11 15:24:31 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	i;
 
-	if (!s)
+	if (!s && !n)
 		return (NULL);
 	i = 0;
 	while (i < n)

@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 15:00:35 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/10 17:48:45 by annabrag         ###   ########.fr       */
+/*   Created: 2023/05/08 12:10:19 by annabrag          #+#    #+#             */
+/*   Updated: 2023/05/11 15:19:33 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *str)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
-	size_t	slen;
-	char	*dup;
+	char	*trim;
+	size_t	start;
+	size_t	end;
 
-	if (!str)
+	if (!s1 || !set)
 		return (NULL);
-	slen = ft_strlen(str);
-	dup = (char *)malloc(sizeof(char) * (slen + 1));
-	if (!dup)
-		return (NULL);
-	i = 0;
-	while (str[i])
-	{
-		dup[i] = str[i];
-		i++;
-	}
-	dup[i] = '\0';
-	return (dup);
+	start = 0;
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	end = ft_strlen(s1);
+	while (start < end && ft_strchr(set, s1[end - 1]))
+		end--;
+	trim = ft_substr(s1, start, (end - start));
+	return (trim);
 }
 
 /*int	main(int argc, char **argv)
 {
 	if (argc < 2)
 		return (0);
-	printf("%s\n", ft_strdup(argv[1]));
+	printf("Result: %s\n", ft_strtrim(argv[1], argv[2]));
 }*/

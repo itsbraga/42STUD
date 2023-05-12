@@ -1,46 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 19:23:31 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/05 13:49:55 by annabrag         ###   ########.fr       */
+/*   Created: 2023/05/09 10:52:34 by annabrag          #+#    #+#             */
+/*   Updated: 2023/05/11 15:06:27 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	size_t	i;
+	t_list	*tmp;
 
-	i = 0;
-	if (!s)
+	if (!lst || !del)
 		return ;
-	while (i < n)
+	while (*lst)
 	{
-		*(char *)(s + i) = 0;
-		i++;
+		tmp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = tmp;
 	}
 }
 
-/*int	main(void)
-{
-	char	s[50];
-
-	puts("Target:");
-	strcpy(s, "J'adore les sushis.");
-	puts(s);
-	puts("\n");
-
-	puts("My function:");
-	ft_bzero(s, 2);
-	puts(s);
-	puts("\n");
-
-	puts("Computer's function:");
-	bzero(s, 2);
-	puts(s);
-}*/
+/*int   main(void)*/
