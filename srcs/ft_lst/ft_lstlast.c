@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
+/*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 23:37:14 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/12 18:38:54 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/11/15 18:44:08 by panther          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libc/libft.h"
+#include "../../includes/libft.h"
 
 /*	Description:
 	

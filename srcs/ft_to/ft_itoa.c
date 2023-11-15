@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
+/*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 12:08:39 by annabrag          #+#    #+#             */
-/*   Updated: 2023/05/12 18:03:27 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/11/15 18:43:05 by panther          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libc/libft.h"
+#include "../../includes/libft.h"
 
 /*	Description:
 	Cette fonction convertit le nombre entier 'n' en une chaîne de caractères
