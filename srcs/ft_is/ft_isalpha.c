@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
+/*   By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:40:10 by annabrag          #+#    #+#             */
-/*   Updated: 2023/11/15 18:55:03 by panther          ###   ########.fr       */
+/*   Updated: 2023/11/22 22:59:53 by art3mis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
 
 /*	Description:
 	Cette fonction permet de tester si un caractère est alphabétique ou non

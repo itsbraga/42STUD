@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
+/*   By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:56:57 by annabrag          #+#    #+#             */
-/*   Updated: 2023/11/15 18:55:18 by panther          ###   ########.fr       */
+/*   Updated: 2023/11/22 22:59:51 by art3mis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
 
 /*	Description:
 	Cette fonction permet de tester si un caractère est alpha-numérique ou non

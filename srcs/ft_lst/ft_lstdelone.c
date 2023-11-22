@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
+/*   By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 10:41:16 by annabrag          #+#    #+#             */
-/*   Updated: 2023/11/15 18:43:54 by panther          ###   ########.fr       */
+/*   Updated: 2023/11/22 23:00:10 by art3mis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
 
 /*	Description:
 	Cette fonction supprime un seul élément de la liste 'lst' en libérant la

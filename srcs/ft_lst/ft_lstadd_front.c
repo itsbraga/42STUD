@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
+/*   By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 13:39:24 by annabrag          #+#    #+#             */
-/*   Updated: 2023/11/15 18:43:39 by panther          ###   ########.fr       */
+/*   Updated: 2023/11/22 23:00:07 by art3mis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
 
 /*	Description:
 	Cette fonction ajoute un nouvel élément au début d'une liste chaînée en
