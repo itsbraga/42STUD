@@ -6,7 +6,7 @@
 #    By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 11:07:10 by annabrag          #+#    #+#              #
-#    Updated: 2023/11/24 19:28:42 by annabrag         ###   ########.fr        #
+#    Updated: 2023/11/24 19:39:23 by annabrag         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ BRIGHT_CYAN	:=	\e[96m
 
 NAME		=	libft.a
 INC		=	include/
-CC		=	clang
+CC		=	cc
 CFLAGS		=	-Wall -Wextra -Werror
 FSANITIZE	=	-fsanitize=address -g3
 LIBC		=	ar -rcs
