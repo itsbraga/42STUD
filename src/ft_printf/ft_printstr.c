@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printstr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+        */
+/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:20:51 by panther           #+#    #+#             */
-/*   Updated: 2023/11/22 22:56:19 by art3mis          ###   ########.fr       */
+/*   Updated: 2023/11/24 17:27:12 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "libft.h"
+#include "../../include/ft_printf.h"
+#include "../../include/libft.h"
 //Return (6) == errno
 
 int	ft_printstr(char *s)

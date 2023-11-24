@@ -6,7 +6,7 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 11:34:12 by panther           #+#    #+#             */
-/*   Updated: 2023/05/23 18:29:38 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/11/24 18:26:55 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,8 @@
 # include <stdlib.h>
 # include <stdint.h>
 # include <stdio.h>
-/*  extern FILE *stdin;
-    extern FILE *stdout;
-    extern FILE *stderr;
-*/
 # include <stdarg.h>
+
 /* ************************************************************************** */
 /*                                                                            */
 /*      Attention! Pour permettre de trouver les paramètres sur la pile       */
@@ -55,6 +52,5 @@ int		ft_printhex(unsigned int n, const char *format);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 char	*ft_itoa(int n);
-size_t	ft_strlen(char *s);
 
 #endif

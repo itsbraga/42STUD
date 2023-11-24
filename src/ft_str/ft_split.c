@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+        */
+/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 15:29:00 by annabrag          #+#    #+#             */
-/*   Updated: 2023/11/23 02:36:47 by art3mis          ###   ########.fr       */
+/*   Updated: 2023/11/24 16:51:45 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ char	**ft_split(char const *s, char c)
 		else
 			s++;
 	}
-	split[i] = '\0';
+	split[i] = NULL;
 	return (split);
 }
 

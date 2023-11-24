@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printhex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+        */
+/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 13:41:01 by panther           #+#    #+#             */
-/*   Updated: 2023/11/22 22:55:58 by art3mis          ###   ########.fr       */
+/*   Updated: 2023/11/24 17:26:40 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "libft.h"
+#include "../../include/ft_printf.h"
+#include "../../include/libft.h"
 
 void	ft_puthex(unsigned int n, const char *format)
 {

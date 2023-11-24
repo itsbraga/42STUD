@@ -6,19 +6,48 @@
 #    By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 11:07:10 by annabrag          #+#    #+#              #
-#    Updated: 2023/11/23 18:17:16 by annabrag         ###   ########.fr        #
+#    Updated: 2023/11/24 19:28:42 by annabrag         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+############################## COLORS ##############################
+
+RESET		:=	\e[0m
+BOLD		:=	\e[1m
+DIM		:=	\e[2m
+ITAL		:=	\e[3m
+UNDERLINE	:=	\e[4m
+
+BLACK		:=	\e[30m
+GRAY		:=	\e[90m
+RED		:=	\e[31m
+GREEN		:=	\e[32m
+YELLOW		:=	\e[33m
+ORANGE		:=	\e[38;5;208m
+BLUE		:=	\e[34m
+PURPLE		:=	\e[35m
+PINK		:=	\033[38;2;255;182;193m
+CYAN		:=	\e[36m
+
+BRIGHT_BLACK	:=	\e[90m
+LIGHT_GRAY	:=	\e[37m
+BRIGHT_RED	:=	\e[91m
+BRIGHT_GREEN	:=	\e[92m
+BRIGHT_YELLOW	:=	\e[93m
+BRIGHT_BLUE	:=	\e[94m
+BRIGHT_PURPLE	:=	\e[95m
+BRIGHT_CYAN	:=	\e[96m
+
+
 ############################## BASICS ##############################
 
-NAME		= libft.a
-INC		= include/
-CC		= clang
-CFLAGS		= -Wall -Wextra -Werror
-FSANITIZE	= -fsanitize=address -g3
-LIBC		= ar -rcs
-RM		= rm -rf
+NAME		=	libft.a
+INC		=	include/
+CC		=	clang
+CFLAGS		=	-Wall -Wextra -Werror
+FSANITIZE	=	-fsanitize=address -g3
+LIBC		=	ar -rcs
+RM		=	rm -rf
 
 
 ############################# SOURCES #############################
@@ -42,7 +71,7 @@ FT_MEM_FILES	=	ft_memset \
 			ft_memmove \
 			ft_memchr \
 			ft_memcmp
-				
+			
 FT_STR_DIR	=	ft_str/
 FT_STR_FILES	=	ft_strlen \
 			ft_bzero \
@@ -78,18 +107,18 @@ FT_LST_FILES	=	ft_lstnew \
 			ft_lstiter \
 			ft_lstmap
 
+GNL_DIR		=	get_next_line/
+GNL_FILES	=	get_next_line \
+			get_next_line_utils
+
 FT_PRINTF_DIR	=	ft_printf/
 FT_PRINTF_FILES	=	ft_printf \
-			ft_printf_unsigned_int \
+			ft_print_unsigned_int \
 			ft_printchar \
 			ft_printhex \
 			ft_printnbr \
 			ft_printptr \
 			ft_printstr
-
-GNL_DIR		=	get_next_line/
-GNL_FILES	=	get_next_line \
-			get_next_line_utils
 
 
 ####################### COMBINE DIRECTORIES AND FILES #######################
@@ -102,8 +131,8 @@ SRC_NAMES	= $(addprefix $(FT_FD_DIR), $(addsuffix .c, $(FT_FD_FILES))) \
 			$(addprefix $(FT_STR_DIR), $(addsuffix .c, $(FT_STR_FILES))) \
 			$(addprefix $(FT_TO_DIR), $(addsuffix .c, $(FT_TO_FILES))) \
 			$(addprefix $(FT_LST_DIR), $(addsuffix .c, $(FT_LST_FILES))) \
-			$(addprefix $(FT_PRINTF_DIR), $(addsuffix .c, $(FT_PRINTF_FILES))) \
-			$(addprefix $(GNL_DIR), $(addsuffix .c, $(GNL_FILES)))
+			$(addprefix $(GNL_DIR), $(addsuffix .c, $(GNL_FILES))) \
+			$(addprefix $(FT_PRINTF_DIR), $(addsuffix .c, $(FT_PRINTF_FILES)))
 
 OBJ_DIR		= obj/
 
@@ -115,8 +144,9 @@ OBJ_FOLDERS	= $(addprefix $(OBJ_DIR), $(FT_FD_DIR) \
 			$(FT_STR_DIR) \
                         $(FT_TO_DIR) \
 			$(FT_LST_DIR) \
-			$(FT_PRINTF_DIR) \
-                	$(GNL_DIR))
+                	$(GNL_DIR) \
+			$(FT_PRINTF_DIR))
+
 
 OBJ		= $(addprefix $(OBJ_DIR), $(OBJ_NAMES))
 
@@ -124,34 +154,30 @@ OBJ		= $(addprefix $(OBJ_DIR), $(OBJ_NAMES))
 ################################### RULES ###################################
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
-			@mkdir -p $(OBJ_DIR)$(SRC_DIR)
-#			@echo "$(ITAL)$(BLUE)Compiling: $< $(RESET)"
+			@mkdir -p $(dir $@)
+			@printf "$(ITAL)$(ORANGE)Compiling: $(RESET)$(ITAL)$<\n"
 			@$(CC) $(CFLAGS) -I $(INC) -c $< -o $@
 
 # link .o files to the library
 $(NAME):	$(OBJ)
 			@$(LIBC) $(NAME) $(OBJ)
-			@echo "$(BRIGHT_PURPLE)Libft successfully compiled!$(RESET)"
+			@printf "\n$(RESET)$(PINK)[LIBFT]$(RESET), $(BLUE)[GET_NEXT_LINE]$(RESET), $(BRIGHT_PURPLE)[FT_PRINTF]$(RESET) successfully compiled!$(RESET)"
 
 all:		$(NAME)
-
-# bonus:		$(BONUS_OBJ)
-# 			@$(LIBC) $(NAME) $(BONUS_OBJ)
-# 			@echo "$(BRIGHT_PURPLE)Libft bonus successfully compiled!$(RESET)"
 
 san:		$(FSANITIZE)
 
 clean:
 			@$(RM) $(OBJ_DIR)
-			@echo "$(PINK)[LIBFT]:\tobject files : cleaned! $(RESET)🧹\n"
+			@printf "$(PINK)[LIBFT]:\tobject files : cleaned! $(RESET)🐞\n\n"
 
 fclean: 	clean
 			@$(RM) $(NAME)
 			@find . -name ".DS_Store" -delete
-			@echo "$(PURPLE)[LIBFT]:\texec files : cleaned! $(RESET)🧹\n"
+			@printf "$(PURPLE)[LIBFT]:\texec files : cleaned! $(RESET)🦋\n\n"
 
 re:		fclean all
-			@echo "$(CYAN)Cleaning and rebuilding done! $(RESET)✨\n"
+			@printf "\n\n✨ $(BOLD)$(YELLOW)Cleaning and rebuilding done! $(RESET)✨\n"
 
 norm:
 			@clear

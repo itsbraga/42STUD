@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printptr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+        */
+/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:50:47 by panther           #+#    #+#             */
-/*   Updated: 2023/11/22 22:56:13 by art3mis          ###   ########.fr       */
+/*   Updated: 2023/11/24 17:26:58 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "libft.h"
+#include "../../include/ft_printf.h"
+#include "../../include/libft.h"
 
 void	ft_putptr(unsigned long long n)
 {
