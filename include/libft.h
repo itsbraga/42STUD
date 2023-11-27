@@ -6,7 +6,7 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 16:44:52 by annabrag          #+#    #+#             */
-/*   Updated: 2023/11/24 18:26:44 by annabrag         ###   ########.fr       */
+/*   Updated: 2023/11/27 18:46:26 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <stddef.h>
 # include <stdio.h>
+# include "colors.h"
 
 typedef struct s_list
 {
@@ -46,6 +47,7 @@ void		ft_bzero(void *s, size_t n);
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *s, int fd);
+void		ft_putstr_color_fd(char *color, char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
 char		*ft_strchr(const char *str, int c);
