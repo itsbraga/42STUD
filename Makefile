@@ -6,7 +6,7 @@
 #    By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 11:07:10 by annabrag          #+#    #+#              #
-#    Updated: 2023/11/27 15:13:15 by annabrag         ###   ########.fr        #
+#    Updated: 2023/11/27 15:35:29 by annabrag         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ BRIGHT_CYAN	:=	\e[96m
 ############################## BASICS ##############################
 
 NAME		=	libft.a
-INC		=	include/
+INC		=	-I include/
 CC		=	cc
 CFLAGS		=	-Wall -Wextra -Werror
 FSANITIZE	=	-fsanitize=address -g3
@@ -156,7 +156,7 @@ OBJ		= $(addprefix $(OBJ_DIR), $(OBJ_NAMES))
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 			@mkdir -p $(dir $@)
 			@printf "$(ITAL)$(ORANGE)Compiling: $(RESET)$(ITAL)$<\n"
-			@$(CC) $(CFLAGS) -I $(INC) -c $< -o $@
+			@$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 # link .o files to the library
 $(NAME):	$(OBJ)
