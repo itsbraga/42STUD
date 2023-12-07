@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strisnum.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 11:56:57 by annabrag          #+#    #+#             */
-/*   Updated: 2023/12/07 19:46:11 by annabrag         ###   ########.fr       */
+/*   Created: 2023/12/07 19:23:06 by annabrag          #+#    #+#             */
+/*   Updated: 2023/12/07 19:45:58 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
 /*	Description:
-	Cette fonction permet de tester si un caractère
-	est alpha-numérique ou non.
-	
-	Warning!
-	On ne traite que les caractères purs ASCII (-> 127).
+	Cette fonction vérifie si la chaîne de caractères 's'
+	représente une valeur numérique.
 
 	Valeur de retour:
-	-	Une valeur positive non nulle si c'est un
-		caractère alpha-numérique.
-	-	0 si c'est un caractère alpha-numérique.
+	-	1 si c'est une chaîne de caractères numériques.
+	-	0 si ce n'en est pas.
 */
 
-int	ft_isalnum(int c)
+int	ft_strisnum(char *s)
 {
-	if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90)
-		|| (c >= 97 && c <= 122))
-		return (1);
-	else
-		return (0);
+	int	i;
+
+	i = 0;
+	if (s[i] == '-')
+		i++;
+	while (s[i])
+	{
+		if (!ft_isdigit(s[i]))
+			return (0);
+		i++;
+	}
+	return (1);
 }

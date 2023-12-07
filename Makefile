@@ -6,7 +6,7 @@
 #    By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 11:07:10 by annabrag          #+#    #+#              #
-#    Updated: 2023/11/27 18:46:55 by annabrag         ###   ########.fr        #
+#    Updated: 2023/12/07 19:48:05 by annabrag         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,7 +89,8 @@ FT_STR_FILES	=	ft_strlen.c \
 			ft_strtrim.c \
 			ft_split.c \
 			ft_strmapi.c \
-			ft_striteri.c
+			ft_striteri.c \
+			ft_strisnum.c
 
 FT_TO_DIR	=	ft_to/
 FT_TO_FILES	=	ft_tolower.c \
