@@ -6,7 +6,7 @@
 #    By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 11:07:10 by annabrag          #+#    #+#              #
-#    Updated: 2023/12/13 19:32:08 by annabrag         ###   ########.fr        #
+#    Updated: 2023/12/13 20:44:16 by annabrag         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,9 +42,9 @@ BRIGHT_CYAN	:=	\e[96m
 ############################## BASICS ##############################
 
 NAME		=	libft.a
-INC		=	-I include/
 CC		=	cc
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror -I
+INC		=	include/
 FSANITIZE	=	-fsanitize=address -g3
 LIBC		=	ar -rcs
 RM		=	rm -rf
@@ -149,13 +149,12 @@ OBJ_FOLDERS	= $(addprefix $(OBJ_DIR), $(FT_FD_DIR) \
                 	$(GNL_DIR) \
 			$(FT_PRINTF_DIR))
 
-
 OBJ		= $(addprefix $(OBJ_DIR), $(OBJ_NAMES))
 
 
 ################################### RULES ###################################
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c
 			@mkdir -p $(dir $@)
 			@printf "$(ITAL)$(ORANGE)Compiling: $(RESET)$(ITAL)$<\n"
 			@$(CC) $(CFLAGS) $(INC) -c $< -o $@
@@ -183,6 +182,6 @@ re:		fclean all
 
 norm:
 			@clear
-			@norminette $(SRC) $(INC)
+			@norminette $(SRC_DIR) $(INC) | grep -v Norme -B1 || true
 
 .PHONY:		all clean fclean re norm
