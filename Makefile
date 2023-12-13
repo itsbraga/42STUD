@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+         #
+#    By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 11:07:10 by annabrag          #+#    #+#              #
-#    Updated: 2023/12/11 21:46:37 by art3mis          ###   ########.fr        #
+#    Updated: 2023/12/13 19:32:08 by annabrag         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -127,15 +127,6 @@ FT_PRINTF_FILES	=	ft_printf.c \
 
 SRC_DIR		= src/
 
-# SRC_NAMES	= $(addprefix $(FT_FD_DIR), $(addsuffix .c, $(FT_FD_FILES))) \
-# 			$(addprefix $(FT_IS_DIR), $(addsuffix .c, $(FT_IS_FILES))) \
-# 			$(addprefix $(FT_MEM_DIR), $(addsuffix .c, $(FT_MEM_FILES))) \
-# 			$(addprefix $(FT_STR_DIR), $(addsuffix .c, $(FT_STR_FILES))) \
-# 			$(addprefix $(FT_TO_DIR), $(addsuffix .c, $(FT_TO_FILES))) \
-# 			$(addprefix $(FT_LST_DIR), $(addsuffix .c, $(FT_LST_FILES))) \
-# 			$(addprefix $(GNL_DIR), $(addsuffix .c, $(GNL_FILES))) \
-# 			$(addprefix $(FT_PRINTF_DIR), $(addsuffix .c, $(FT_PRINTF_FILES)))
-
 SRC_NAMES	= $(addprefix $(FT_FD_DIR), $(FT_FD_FILES)) \
 			$(addprefix $(FT_IS_DIR), $(FT_IS_FILES)) \
 			$(addprefix $(FT_MEM_DIR), $(FT_MEM_FILES)) \
@@ -164,7 +155,7 @@ OBJ		= $(addprefix $(OBJ_DIR), $(OBJ_NAMES))
 
 ################################### RULES ###################################
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 			@mkdir -p $(dir $@)
 			@printf "$(ITAL)$(ORANGE)Compiling: $(RESET)$(ITAL)$<\n"
 			@$(CC) $(CFLAGS) $(INC) -c $< -o $@
