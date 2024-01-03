@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
+/*   By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 16:44:52 by annabrag          #+#    #+#             */
-/*   Updated: 2023/12/13 20:47:20 by annabrag         ###   ########.fr       */
+/*   Updated: 2024/01/03 21:07:02 by art3mis          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,6 @@ void		ft_lstdelone(t_list *lst, void (*del)(void *));
 void		ft_lstclear(t_list **lst, void (*del)(void *));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 int			ft_lstsize(t_list *lst);
+void		displayList(t_list *lst);
 
 #endif

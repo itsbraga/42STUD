@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+         #
+#    By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 11:07:10 by annabrag          #+#    #+#              #
-#    Updated: 2023/12/14 15:10:47 by annabrag         ###   ########.fr        #
+#    Updated: 2024/01/03 21:07:42 by art3mis          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -105,7 +105,8 @@ FT_LST_FILES	=	ft_lstnew.c \
 			ft_lstdelone.c \
 			ft_lstclear.c \
 			ft_lstiter.c \
-			ft_lstmap.c
+			ft_lstmap.c \
+			ft_lstdisplay.c
 
 GNL_DIR		=	get_next_line/
 GNL_FILES	=	get_next_line.c \
