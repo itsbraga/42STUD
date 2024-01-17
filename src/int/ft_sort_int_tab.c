@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdisplay.c                                    :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/03 21:05:15 by art3mis           #+#    #+#             */
-/*   Updated: 2024/01/17 19:27:08 by panther          ###   ########.fr       */
+/*   Created: 2023/02/08 10:41:06 by annabrag          #+#    #+#             */
+/*   Updated: 2024/01/17 18:51:35 by panther          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
-
-void	displayList(t_list *lst)
+void	ft_swap_tab(int *a, int *b)
 {
-	t_list	*tmp;
+	int	tmp;
 
-	tmp = lst;
-	while (tmp != NULL)
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
+void	ft_sort_int_tab(int *tab, int size)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < size)
 	{
-		ft_putnbr_fd(*((int *)tmp->content), 1);
-		ft_putendl_fd("", 1);
-		tmp = tmp->next;
+		j = 0;
+		while (j < (size - i - 1))
+		{
+			if (&tab[j] < &tab[j + 1])
+				ft_swap_tab(&tab[j], &tab[j + 1]);
+			j++;
+		}
+		i++;
 	}
 }

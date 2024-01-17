@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdisplay.c                                    :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
+/*   By: annabrag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/03 21:05:15 by art3mis           #+#    #+#             */
-/*   Updated: 2024/01/17 19:27:08 by panther          ###   ########.fr       */
+/*   Created: 2023/02/09 22:44:24 by annabrag          #+#    #+#             */
+/*   Updated: 2023/02/11 21:10:49 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
-
-void	displayList(t_list *lst)
+int	ft_strcmp(char *s1, char *s2)
 {
-	t_list	*tmp;
+	int	i;
 
-	tmp = lst;
-	while (tmp != NULL)
-	{
-		ft_putnbr_fd(*((int *)tmp->content), 1);
-		ft_putendl_fd("", 1);
-		tmp = tmp->next;
-	}
+	i = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i])
+		i++;
+	return (s1[i] - s2[i]);
 }

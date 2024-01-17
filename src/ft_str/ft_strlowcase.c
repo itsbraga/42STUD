@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdisplay.c                                    :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
+/*   By: annabrag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/03 21:05:15 by art3mis           #+#    #+#             */
-/*   Updated: 2024/01/17 19:27:08 by panther          ###   ########.fr       */
+/*   Created: 2023/02/08 23:51:39 by annabrag          #+#    #+#             */
+/*   Updated: 2023/02/11 15:11:56 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
-
-void	displayList(t_list *lst)
+char	*ft_strlowcase(char *str)
 {
-	t_list	*tmp;
+	int	i;
 
-	tmp = lst;
-	while (tmp != NULL)
+	i = 0;
+	while (str[i])
 	{
-		ft_putnbr_fd(*((int *)tmp->content), 1);
-		ft_putendl_fd("", 1);
-		tmp = tmp->next;
+		if (str[i] >= 65 && str[i] <= 90)
+			str[i] += 32;
+		i++;
 	}
+	return (str);
 }

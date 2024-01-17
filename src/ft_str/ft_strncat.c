@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdisplay.c                                    :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/03 21:05:15 by art3mis           #+#    #+#             */
-/*   Updated: 2024/01/17 19:27:08 by panther          ###   ########.fr       */
+/*   Created: 2023/02/11 21:28:55 by annabrag          #+#    #+#             */
+/*   Updated: 2024/01/17 18:35:22 by panther          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
-
-void	displayList(t_list *lst)
+unsigned int	ft_strlen3(char *str)
 {
-	t_list	*tmp;
+	unsigned int	i;
 
-	tmp = lst;
-	while (tmp != NULL)
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
+{
+	unsigned int	i;
+	unsigned int	dlen;
+
+	i = 0;
+	dlen = ft_strlen3(dest);
+	while (src[i] && i < nb)
 	{
-		ft_putnbr_fd(*((int *)tmp->content), 1);
-		ft_putendl_fd("", 1);
-		tmp = tmp->next;
+		dest[dlen + i] = src[i];
+		i++;
 	}
+	dest[dlen + i] = '\0';
+	return (dest);
 }

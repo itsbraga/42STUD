@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdisplay.c                                    :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: panther <panther@student.42.fr>            +#+  +:+       +#+        */
+/*   By: annabrag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/03 21:05:15 by art3mis           #+#    #+#             */
-/*   Updated: 2024/01/17 19:27:08 by panther          ###   ########.fr       */
+/*   Created: 2023/02/11 21:20:35 by annabrag          #+#    #+#             */
+/*   Updated: 2023/02/11 21:28:48 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
-
-void	displayList(t_list *lst)
+char	*ft_strcat(char *dest, char *src)
 {
-	t_list	*tmp;
+	int	i;
+	int	j;
 
-	tmp = lst;
-	while (tmp != NULL)
+	i = 0;
+	j = 0;
+	while (dest[i])
+		i++;
+	while (src[j])
 	{
-		ft_putnbr_fd(*((int *)tmp->content), 1);
-		ft_putendl_fd("", 1);
-		tmp = tmp->next;
+		dest[i] = src[j];
+		j++;
+		i++;
 	}
+	dest[i] = '\0';
+	return (dest);
 }
