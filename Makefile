@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: panther <panther@student.42.fr>            +#+  +:+       +#+         #
+#    By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 11:07:10 by annabrag          #+#    #+#              #
-#    Updated: 2024/01/17 19:28:21 by panther          ###   ########.fr        #
+#    Updated: 2024/02/08 21:31:51 by annabrag         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,8 @@ FT_IS_FILES		= 	ft_isalpha.c \
 					ft_isdigit.c \
 					ft_isalnum.c \
 					ft_isascii.c \
-					ft_isprint.c
+					ft_isprint.c \
+					ft_isspace.c
 
 FT_MEM_DIR		=	ft_mem/
 FT_MEM_FILES	=	ft_memset.c \
@@ -86,6 +87,7 @@ FT_STR_FILES	=	ft_strlen.c \
 					ft_strjoin.c \
 					ft_strtrim.c \
 					ft_split.c \
+					ft_split_alltypes.c \
 					ft_strmapi.c \
 					ft_striteri.c \
 					ft_strisnum.c \
