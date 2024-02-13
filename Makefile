@@ -6,7 +6,7 @@
 #    By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 11:07:10 by annabrag          #+#    #+#              #
-#    Updated: 2024/02/08 21:31:51 by annabrag         ###   ########.fr        #
+#    Updated: 2024/02/13 15:37:51 by annabrag         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,7 @@ FT_FD_FILES		= 	ft_putchar_fd.c \
 FT_IS_DIR 		= 	ft_is/
 FT_IS_FILES		= 	ft_isalpha.c \
 					ft_isdigit.c \
+					ft_isanint.c \
 					ft_isalnum.c \
 					ft_isascii.c \
 					ft_isprint.c \

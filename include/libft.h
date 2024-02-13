@@ -6,7 +6,7 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 16:44:52 by annabrag          #+#    #+#             */
-/*   Updated: 2024/02/09 21:33:18 by annabrag         ###   ########.fr       */
+/*   Updated: 2024/02/13 15:38:12 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <stddef.h>
 # include <stdio.h>
+# include <limits.h>
 # include "colors.h"
 
 
@@ -30,6 +31,7 @@ typedef struct s_list
 // Mandatory and bonus functions
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
+int			ft_isanint(int c);
 int			ft_isalnum(int c);
 int			ft_isascii(int c);
 int			ft_isprint(int c);
