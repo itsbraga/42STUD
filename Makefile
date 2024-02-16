@@ -6,7 +6,7 @@
 #    By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 11:07:10 by annabrag          #+#    #+#              #
-#    Updated: 2024/02/16 17:27:13 by annabrag         ###   ########.fr        #
+#    Updated: 2024/02/16 17:51:30 by annabrag         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -250,7 +250,7 @@ DEPS		=	$(addprefix $(OBJ_DIR), $(DEP_NAMES))
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 			@mkdir -p $(dir $@)
-			@printf "$(ITAL)$(PURPLE)Compiling: $(RESET)$(ITAL)$<                                       \r"
+			@printf "$(BOLD)$(ITAL)$(PURPLE)Compiling: $(RESET)$(ITAL)$<                                       \r"
 			@$(CC) $(DEPFLAGS) $(CFLAGS) $(INC) -c $< -o $@
 
 -include $(DEPS)
@@ -267,13 +267,13 @@ san:	$(FSANITIZE)
 
 clean:
 		@$(RM) $(OBJ_DIR)
-		@printf "$(BOLD)$(PINK)[LIBFT & Co.]: $(RESET)$(PINK)object files $(RESET)\t=> CLEANED!\n\n"
+		@printf "$(BOLD)$(PINK)[LIBFT & Co.]:\t$(RESET)$(PINK)object files $(RESET)\t=> CLEANED!\n"
 
 fclean: clean
 		@$(RM) $(NAME)
 		@find . -name ".DS_Store" -delete
 		@find . -name "-Wall" -delete
-		@printf "$(BOLD)$(PINK)[LIBFT & Co.]: $(RESET)$(PINK)exec. files $(RESET)\t=> CLEANED!\n\n"
+		@printf "$(BOLD)$(PINK)[LIBFT & Co.]:\t$(RESET)$(PINK)exec. files $(RESET)\t=> CLEANED!\n\n"
 		@printf "\n. ⋅ ˚̣- : ✧ : – ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ₊° ˗ ˏ ˋ ♡ ˎˊ ˗ °₊ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ – : ✧ : -˚̣⋅ .\n\n\n"
 
 re:	fclean all
@@ -292,4 +292,4 @@ norm:
 		@clear
 		@norminette $(SRC_DIR) $(INC) | grep -v Norme -B1 || true
 
-.PHONY:		all clean fclean re norm
+.PHONY:		all clean fclean re diff norm
