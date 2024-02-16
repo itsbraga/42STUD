@@ -6,7 +6,7 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 18:32:39 by annabrag          #+#    #+#             */
-/*   Updated: 2024/01/29 18:34:07 by annabrag         ###   ########.fr       */
+/*   Updated: 2024/02/16 20:03:19 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ long	ft_atol(const char *str)
 	while (str[i] && (str[i] >= 48 && str[i] <= 57))
 	{
 		res = res * 10 + (str[i] - 48);
+		if (res > INT_MAX || res < INT_MIN)
+			return ((long)INT_MAX + 1);
 		i++;
 	}
 	return (res * sign);
