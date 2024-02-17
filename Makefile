@@ -6,7 +6,7 @@
 #    By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 11:07:10 by annabrag          #+#    #+#              #
-#    Updated: 2024/02/16 20:01:38 by annabrag         ###   ########.fr        #
+#    Updated: 2024/02/17 02:04:25 by annabrag         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,60 +76,27 @@ RM		=	rm -rf
 #################################################################################
 
 FT_FD_DIR	= 	ft_fd/
-FT_FD_FILES	= 	ft_putchar_fd.c \
-			ft_putendl_fd.c \
-			ft_putnbr_fd.c \
-			ft_putstr_fd.c \
-			ft_putstr_color_fd.c
+FT_FD_FILES	= 	ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
+			ft_putstr_fd.c ft_putstr_color_fd.c
 
 FT_IS_DIR 	= 	ft_is/
-FT_IS_FILES	= 	ft_isalpha.c \
-			ft_isdigit.c \
-			ft_isalnum.c \
-			ft_isascii.c \
-			ft_isprint.c \
-			ft_isspace.c
+FT_IS_FILES	= 	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
+			ft_isprint.c ft_isspace.c
 
 FT_MEM_DIR	=	ft_mem/
-FT_MEM_FILES	=	ft_memset.c \
-			ft_memcpy.c \
-			ft_memmove.c \
-			ft_memchr.c \
-			ft_memcmp.c \
-			ft_bzero.c \
-			ft_calloc.c
+FT_MEM_FILES	=	ft_memset.c ft_memcpy.c ft_memmove.c ft_memchr.c \
+			ft_memcmp.c ft_bzero.c ft_calloc.c
 			
 FT_STR_DIR	=	ft_str/
-FT_STR_FILES	=	ft_strlen.c \
-			ft_strlcpy.c \
-			ft_strlcat.c \
-			ft_strchr.c \
-			ft_strrchr.c \
-			ft_strncmp.c \
-			ft_strnstr.c \
-			ft_strdup.c \
-			ft_substr.c \
-			ft_strjoin.c \
-			ft_strtrim.c \
-			ft_split.c \
-			ft_split_alltypes.c \
-			ft_strmapi.c \
-			ft_striteri.c \
-			ft_strisnum.c \
-			ft_strcapitalize.c \
-			ft_strcat.c \
-			ft_strcmp.c \
-			ft_strlowcase.c \
-			ft_strupcase.c \
-			ft_strncat.c \
-			ft_strstr.c
+FT_STR_FILES	=	ft_strlen.c ft_strlcpy.c ft_strlcat.c ft_strchr.c \
+			ft_strrchr.c ft_strncmp.c ft_strnstr.c ft_strdup.c \
+			ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c \
+			ft_strmapi.c ft_striteri.c \
+			ft_strisnum.c ft_strcapitalize.c ft_strcat.c ft_strcmp.c \
+			ft_strlowcase.c ft_strupcase.c ft_strncat.c ft_strstr.c
 
 FT_TO_DIR	=	ft_to/
-FT_TO_FILES	=	ft_tolower.c \
-			ft_toupper.c \
-			ft_itoa.c \
-			ft_atoi.c \
-			ft_atol.c
+FT_TO_FILES	=	ft_tolower.c ft_toupper.c ft_itoa.c ft_atoi.c ft_atol.c
 
 FT_LST_DIR	=	ft_lst/
 FT_LST_FILES	=	ft_lstnew.c \
@@ -230,7 +197,8 @@ DEP_FOLDERS	=	$(addprefix $(OBJ_DIR), $(FT_FD_DIR) \
 				$(FT_FROM_TO_DIR) \
 				$(MATHS_DIR))
 
-DEPS		=	$(addprefix $(OBJ_DIR), $(DEP_NAMES))
+DEP		=	$(addprefix $(OBJ_DIR), $(DEP_NAMES))
+
 
 #################################################################################
 #										#
@@ -240,18 +208,22 @@ DEPS		=	$(addprefix $(OBJ_DIR), $(DEP_NAMES))
 
 all:	$(NAME)
 
+$(info )
+
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 			@mkdir -p $(dir $@)
 			@printf "$(BOLD)$(ITAL)$(PURPLE)Compiling: $(RESET)$(ITAL)$<                                       \r"
 			@$(CC) $(DEPFLAGS) $(CFLAGS) $(INC) -c $< -o $@
 
--include $(DEPS)
+-include $(DEP)
 
 # link .o files to the library
 $(NAME): $(OBJS)
 		@$(LIBC) $(NAME) $(OBJS)
-		@printf "\n\n$(RESET)$(BOLD)$(PINK)[LIBFT]$(RESET), $(BOLD)$(BLUE)[GET_NEXT_LINE]$(RESET), $(BOLD)$(RED)[FT_PRINTF]$(RESET), $(BOLD)$(YELLOW)[POOL_FUNC]$(RESET) successfully compiled!$(RESET)\n\n"
-		@printf "\n. ⋅ ˚̣- : ✧ : – ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ₊° ˗ ˏ ˋ ♡ ˎˊ ˗ °₊ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ – : ✧ : -˚̣⋅ .\n\n\n"
+		@printf "\n\n$(RESET)$(BOLD)$(PINK)[LIBFT]$(RESET), \
+$(BOLD)$(BLUE)[GET_NEXT_LINE]$(RESET), $(BOLD)$(RED)[FT_PRINTF]$(RESET), \
+$(BOLD)$(ORANGE)[MATHS FUNC.]$(RESET) $(BOLD)$(YELLOW)successfully compiled!$(RESET)\n\n"
+		@printf "\n. ⋅ ˚̣- : ✧ : – ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ₊° ˗ ˏ ˋ ♡ ˎˊ ˗ °₊ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ – : ✧ : -˚̣⋅ .\n\n\n\n"
 
 
 san:	$(FSANITIZE)
@@ -263,7 +235,6 @@ clean:
 fclean: clean
 		@$(RM) $(NAME)
 		@find . -name ".DS_Store" -delete
-		@find . -name "-Wall" -delete
 		@printf "$(BOLD)$(PINK)[LIBFT, GNL, FT_PRINTF, MATHS FUNC.]:\t$(RESET)Full clean completed!\n\n"
 		@printf "\n. ⋅ ˚̣- : ✧ : – ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ₊° ˗ ˏ ˋ ♡ ˎˊ ˗ °₊ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ – : ✧ : -˚̣⋅ .\n\n"
 
