@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+         #
+#    By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 11:07:10 by annabrag          #+#    #+#              #
-#    Updated: 2024/02/17 02:26:19 by annabrag         ###   ########.fr        #
+#    Updated: 2024/02/29 17:30:06 by art3mis          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,11 @@ BRIGHT_YELLOW	:=	\e[93m
 BRIGHT_BLUE	:=	\e[94m
 BRIGHT_PURPLE	:=	\e[95m
 BRIGHT_CYAN	:=	\e[96m
+
+# déplace le curseur d'une ligne vers le haut
+UP = \e[1A
+# efface depuis la position actuelle du curseur jusqu'à la fin de l'écran
+ERASE = \e[0J
 
 # define rainbow
 # $(shell echo $(1) | sed -e "s/./\$(shell printf '\033[38;5;%dm' \$$(shell expr \( \$$(od -An -N1 -tu1 /dev/urandom) \% 6 + 196))&) /g")
