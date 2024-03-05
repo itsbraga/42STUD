@@ -6,7 +6,7 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 01:40:54 by panther           #+#    #+#             */
-/*   Updated: 2024/02/16 17:06:06 by annabrag         ###   ########.fr       */
+/*   Updated: 2024/03/06 00:21:43 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <limits.h>
 # include <fcntl.h>
 # include <stdio.h>
+# include <stdbool.h>
 # include "colors.h"
 
 # ifndef BUFFER_SIZE
@@ -39,6 +40,6 @@ char	*extract_line(char *line);
 char	*update_line(char *line);
 char	*use_read_on_line(int fd, char *line);
 
-char	*get_next_line(int fd);
+char	*get_next_line(int fd, bool tofree);
 
 #endif
