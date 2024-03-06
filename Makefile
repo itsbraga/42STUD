@@ -158,7 +158,7 @@ OBJ_DIR			=	obj/
 
 OBJ_NAMES		=	$(SRCS:.c=.o)
 
-OBJ_FOLDERS		=	$(addprefix $(OBJ_DIR), $(FT_FD_DIR), $(FT_IS_DIR), $(FT_MEM_DIR) \
+OBJ_DIRS		=	$(addprefix $(OBJ_DIR), $(FT_FD_DIR), $(FT_IS_DIR), $(FT_MEM_DIR) \
 					$(FT_STR_DIR), $(FT_TO_DIR), $(FT_LST_DIR), $(GNL_DIR) \
 					$(FT_PRINTF_DIR), $(FT_FROM_TO_DIR), $(MATHS_DIR))
 
@@ -173,7 +173,7 @@ OBJS			=	$(addprefix $(OBJ_DIR), $(OBJ_NAMES))
 
 DEP_NAMES		=	$(SRCS:.c=.d)
 
-DEP_FOLDERS		=	$(addprefix $(OBJ_DIR), $(FT_FD_DIR), $(FT_IS_DIR), $(FT_MEM_DIR) \
+DEP_DIRS		=	$(addprefix $(OBJ_DIR), $(FT_FD_DIR), $(FT_IS_DIR), $(FT_MEM_DIR) \
 					$(FT_STR_DIR), $(FT_TO_DIR), $(FT_LST_DIR), $(GNL_DIR) \
 					$(FT_PRINTF_DIR), $(FT_FROM_TO_DIR), $(MATHS_DIR))
 
