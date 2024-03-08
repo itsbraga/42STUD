@@ -3,14 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: art3mis <art3mis@student.42.fr>            +#+  +:+       +#+         #
+#    By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 11:07:10 by annabrag          #+#    #+#              #
-<<<<<<< HEAD
-#    Updated: 2024/02/18 20:00:04 by annabrag         ###   ########.fr        #
-=======
-#    Updated: 2024/02/29 17:30:06 by art3mis          ###   ########.fr        #
->>>>>>> e70b1ac4d88a69057a854172acc1871e169fbe24
+#    Updated: 2024/03/08 15:55:08 by annabrag         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,8 +22,6 @@ DIM			:=	\e[2m
 ITAL		:=	\e[3m
 UNDERLINE	:=	\e[4m
 
-BLACK		:=	\e[30m
-GRAY		:=	\e[90m
 RED			:=	\e[31m
 GREEN		:=	\e[32m
 YELLOW		:=	\e[33m
@@ -37,23 +31,10 @@ PURPLE		:=	\e[35m
 PINK		:=	\033[38;2;255;182;193m
 CYAN		:=	\e[36m
 
-BRIGHT_BLACK	:=	\e[90m
-BRIGHT_GREEN	:=	\e[92m
-BRIGHT_YELLOW	:=	\e[93m
-BRIGHT_BLUE		:=	\e[94m
-BRIGHT_PURPLE	:=	\e[95m
-BRIGHT_CYAN		:=	\e[96m
-
 # déplace le curseur d'une ligne vers le haut
 UP = \e[1A
 # efface depuis la position actuelle du curseur jusqu'à la fin de l'écran
 ERASE = \e[0J
-
-# define rainbow
-# $(shell echo $(1) | sed -e "s/./\$(shell printf '\033[38;5;%dm' \$$(shell expr \( \$$(od -An -N1 -tu1 /dev/urandom) \% 6 + 196))&) /g")
-# endef
-
-# COLORED_TEXT	:= $(call (rainbow))
 
 
 #################################################################################
@@ -199,21 +180,21 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 # link .o files to the library
 $(NAME): $(OBJS)
 		@$(LIBC) $(NAME) $(OBJS)
-		@printf "\n\n$(BOLD)$(shell bash rainbow.sh "[LIBFT, GNL, FT_PRINTF]") "
+		@printf "\n\n$(shell bash rainbow.sh "[LIBFT, GNL, FT_PRINTF]") "
 		@printf "$(RESET)$(BOLD)$(YELLOW)have been successfully compiled!\n\n"
-		@printf "\n. ⋅ ˚̣- : ✧ : – ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ₊° ˗ ˏ ˋ ♡ ˎˊ ˗ °₊ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ – : ✧ : -˚̣⋅ .\n\n\n\n"
+		@printf "$(RESET)\n. ⋅ ˚̣- : ✧ : – ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ₊° ˗ ˏ ˋ ♡ ˎˊ ˗ °₊ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ – : ✧ : -˚̣⋅ .\n\n\n\n"
 
 san:	$(FSANITIZE)
 
 clean:
 		@$(RM) $(OBJ_DIR)
-		@printf "\n$(BOLD)$(PINK)[LIBFT, GNL, FT_PRINTF]:\t$(RESET)Clean completed!\n"
+		@printf "\n$(BOLD)$(PINK)[LIBFT, GNL, FT_PRINTF]: $(RESET)Clean completed!\n"
 
 fclean: clean
 		@$(RM) $(NAME)
 		@find . -name ".DS_Store" -delete
-		@printf "$(BOLD)$(PINK)[LIBFT, GNL, FT_PRINTF]:\t$(RESET)Full clean completed!\n\n"
-		@printf "\n. ⋅ ˚̣- : ✧ : – ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ₊° ˗ ˏ ˋ ♡ ˎˊ ˗ °₊ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ – : ✧ : -˚̣⋅ .\n\n"
+		@printf "$(BOLD)$(PINK)[LIBFT, GNL, FT_PRINTF]: $(RESET)Full clean completed!\n\n"
+		@printf "\n. ⋅ ˚̣- : ✧ : – ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ₊° ˗ ˏ ˋ ♡ ˎˊ ˗ °₊ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ – : ✧ : -˚̣⋅ .\n\n\n"
 
 re:	fclean all
 		@printf "✨ $(BOLD)$(YELLOW)Cleaning and rebuilding done! $(RESET)✨\n\n"

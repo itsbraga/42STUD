@@ -1,5 +1,6 @@
 #!/bin/bash
 
+BOLD='\033[1m'
 RED='\033[0;31m'
 ORANGE='\33[38;5;208m'
 YELLOW='\033[0;33m'
@@ -17,9 +18,8 @@ rainbow_text() {
     TEXT=$1
     for i in $(seq 0 $((${#TEXT}-1))); do
         COLOR=${COLORS[$((i%${#COLORS[@]}))]}
-        echo -ne "${COLOR}${TEXT:$i:1}${RESET}"
+        echo -ne "${COLOR}${BOLD}${TEXT:$i:1}${RESET}"
     done
-    echo
 }
 
 rainbow_text "$1"
