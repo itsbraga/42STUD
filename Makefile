@@ -199,21 +199,20 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 # link .o files to the library
 $(NAME): $(OBJS)
 		@$(LIBC) $(NAME) $(OBJS)
-		@printf "\n\n$(RESET)$(BOLD)$(PINK)[LIBFT]$(RESET), \
-$(BOLD)$(BLUE)[GET_NEXT_LINE]$(RESET), $(BOLD)$(RED)[FT_PRINTF]$(RESET), \
-$(BOLD)$(ORANGE)[MATHS FUNC.]$(RESET) $(BOLD)$(YELLOW)successfully compiled!$(RESET)\n\n"
+		@printf "\n\n$(BOLD)$(shell bash rainbow.sh "[LIBFT, GNL, FT_PRINTF]") "
+		@printf "$(RESET)$(BOLD)$(YELLOW)have been successfully compiled!\n\n"
 		@printf "\n. ⋅ ˚̣- : ✧ : – ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ₊° ˗ ˏ ˋ ♡ ˎˊ ˗ °₊ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ – : ✧ : -˚̣⋅ .\n\n\n\n"
 
 san:	$(FSANITIZE)
 
 clean:
 		@$(RM) $(OBJ_DIR)
-		@printf "\n$(BOLD)$(PINK)[LIBFT, GNL, FT_PRINTF, MATHS FUNC.]:\t$(RESET)Clean completed!\n"
+		@printf "\n$(BOLD)$(PINK)[LIBFT, GNL, FT_PRINTF]:\t$(RESET)Clean completed!\n"
 
 fclean: clean
 		@$(RM) $(NAME)
 		@find . -name ".DS_Store" -delete
-		@printf "$(BOLD)$(PINK)[LIBFT, GNL, FT_PRINTF, MATHS FUNC.]:\t$(RESET)Full clean completed!\n\n"
+		@printf "$(BOLD)$(PINK)[LIBFT, GNL, FT_PRINTF]:\t$(RESET)Full clean completed!\n\n"
 		@printf "\n. ⋅ ˚̣- : ✧ : – ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ₊° ˗ ˏ ˋ ♡ ˎˊ ˗ °₊ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ ⊹ ⭒ – : ✧ : -˚̣⋅ .\n\n"
 
 re:	fclean all
