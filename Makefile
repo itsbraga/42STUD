@@ -6,7 +6,7 @@
 #    By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 11:07:10 by annabrag          #+#    #+#              #
-#    Updated: 2024/04/03 22:17:07 by annabrag         ###   ########.fr        #
+#    Updated: 2024/04/03 22:49:28 by annabrag         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -126,7 +126,8 @@ SRCS		=	$(addprefix $(FT_FD_DIR), $(FT_FD_FILES)) \
 				$(addprefix $(FT_PRINTF_DIR), $(FT_PRINTF_FI)) \
 				$(addprefix $(FT_FROM_TO_DIR), $(FT_FROM_TO_FI)) \
 				$(addprefix $(FT_TAB_DIR), $(FT_TAB_FILES)) \
-				$(addprefix $(MATHS_DIR), $(MATHS_FILES))
+				$(addprefix $(MATHS_DIR), $(MATHS_FILES)) \
+				colors.c
 
 OBJ_DIR		=	obj/
 
