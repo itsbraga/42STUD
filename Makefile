@@ -6,7 +6,7 @@
 #    By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 11:07:10 by annabrag          #+#    #+#              #
-#    Updated: 2024/04/03 21:21:57 by annabrag         ###   ########.fr        #
+#    Updated: 2024/04/03 22:17:07 by annabrag         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,9 +79,9 @@ FT_STR_DIR		=	ft_str/
 FT_STR_FILES	=	ft_strlen.c ft_strlcpy.c ft_strlcat.c ft_strchr.c \
 					ft_strrchr.c ft_strncmp.c ft_strnstr.c ft_strdup.c \
 					ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c \
-					ft_strmapi.c ft_striteri.c ft_strisnum.c \
-					ft_strcapitalize.c ft_strcat.c ft_strcmp.c ft_strlowcase.c \
-					ft_strupcase.c ft_strncat.c ft_strstr.c
+					ft_split_charset.c ft_strmapi.c ft_striteri.c \
+					ft_strisnum.c ft_strcapitalize.c ft_strcat.c ft_strcmp.c \
+					ft_strlowcase.c ft_strupcase.c ft_strncat.c ft_strstr.c
 
 FT_TO_DIR		=	ft_to/
 FT_TO_FILES		=	ft_tolower.c ft_toupper.c ft_itoa.c ft_atoi.c ft_atol.c \
@@ -89,8 +89,8 @@ FT_TO_FILES		=	ft_tolower.c ft_toupper.c ft_itoa.c ft_atoi.c ft_atol.c \
 
 FT_LST_DIR		=	ft_lst/
 FT_LST_FILES	=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-					ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
-					ft_lstmap.c ft_lstdisplay.c
+					ft_lstadd_back.c ft_lstdelone.c ft_lst_rmif.c \
+					ft_lstclear.c ft_lstiter.c ft_lstmap.c ft_lstdisplay.c
 
 GNL_DIR			=	get_next_line/
 GNL_FILES		=	get_next_line.c get_next_line_utils.c

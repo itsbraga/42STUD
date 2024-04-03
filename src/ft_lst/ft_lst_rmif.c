@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lst_rmif.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 11:56:57 by annabrag          #+#    #+#             */
+/*   Created: 2024/04/03 22:13:28 by annabrag          #+#    #+#             */
 /*   Updated: 2024/04/03 22:23:28 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*	Description:
-	Cette fonction permet de tester si un caractère
-	est alpha-numérique ou non.
-	
-	Warning!
-	On ne traite que les caractères purs ASCII (-> 127).
-
-	Valeur de retour:
-	-	Une valeur positive non nulle si c'est un
-		caractère alpha-numérique.
-	-	0 si c'est un caractère alpha-numérique.
+/*
+	Removes from the passed list any element the content of which is "equal"
+	to the reference data.
 */
 
-int	ft_isalnum(int c)
+void	ft_lst_rmif(t_list **lst, void *data_ref, int (*cmp)())
 {
-	if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90)
-		|| (c >= 97 && c <= 122))
-		return (1);
+	t_list	*curr;
+
+	curr = *lst;
+	if (lst == NULL || *lst == NULL)
+		return ;
+	if (cmp(curr->content, data_ref) == 0)
+	{
+		*lst = curr->next;
+		free(curr);
+		ft_lst_rmif(lst, data_ref, cmp);
+	}
 	else
-		return (0);
+	{
+		curr = *lst;
+		ft_lst_rmif(&curr->next, data_ref, cmp);
+	}
 }

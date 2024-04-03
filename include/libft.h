@@ -6,7 +6,7 @@
 /*   By: annabrag <annabrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 16:44:52 by annabrag          #+#    #+#             */
-/*   Updated: 2024/04/03 21:15:53 by annabrag         ###   ########.fr       */
+/*   Updated: 2024/04/03 22:16:41 by annabrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char		*ft_strlowcase(char *str);
 char		*ft_strupcase(char *str);
 char		*ft_strcapitalize(char *str);
-char		**ft_split(char *s, char *charset);
+char		**ft_split(char const *s, char c);
+char		**ft_split_charset(char *s, char *charset);
 void		ft_striteri(char *s, void (*f)(unsigned int, char *));
 void		ft_swap(char **a, char **b);
 
@@ -101,6 +102,7 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void		ft_lstadd_front(t_list **lst, t_list *new);
 void		ft_lstadd_back(t_list **lst, t_list *new);
 void		ft_lstdelone(t_list *lst, void (*del)(void *));
+void		ft_lst_rmif(t_list **lst, void *data_ref, int (*cmp)());
 void		ft_lstclear(t_list **lst, void (*del)(void *));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 void		display_list(t_list *lst);
